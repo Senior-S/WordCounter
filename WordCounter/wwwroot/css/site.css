@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form textarea {
+    background: #000;
+    color: #fff;
+}

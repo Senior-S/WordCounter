@@ -1,0 +1,25 @@
+﻿@model PhraseModel
+
+@{
+    ViewData["Title"] = "Word Counter";
+}
+
+<div class="p-14 w-full items-center rounded-sm text-center">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "phraseForm" }))
+    {
+        @Html.Label("Frase:")
+        @Html.TextAreaFor(c => c.Phrase, new { required = "true", oninvalid = "this.setCustomValidity('Por favor, ingresa una frase')", oninput = "this.setCustomValidity('')" })
+        <input class="bg-[#3b79cf] w-36 px-3 py-1 text-white mx-auto cursor-pointer rounded-full font-semibold shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75" type="submit" value="Contar palabras" />
+    }
+
+    @if (Model != null && Model.WordCount.Count > 0) {
+        <div class="text-center">
+            <ul>
+                @foreach (var word in Model.WordCount)
+                {
+                    <li>@word.Key: @word.Value</li>
+                }
+            </ul>
+        </div>
+    }
+</div>

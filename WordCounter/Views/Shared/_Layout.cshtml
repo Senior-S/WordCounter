@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WordCounter</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+</head>
+<body class="bg-[#181818]">
+    <header class="bg-white">
+        <nav class="mb-3 h-10 border-static flex border-b align-middle shadow">
+            <div class="m-2 container mx-auto flex items-center justify-between">
+                <a class="text-[#CCCCCC] text-xl font-bold" asp-area="" asp-controller="Home" asp-action="Index">WordCounter</a>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="p-4 text-white flex min-h-fit flex-col content-center items-center">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
